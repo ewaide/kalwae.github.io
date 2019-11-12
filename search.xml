@@ -48,6 +48,9 @@
 </li>
 </ul>
 ]]></content>
+      <categories>
+        <category>C语言, 数据结构</category>
+      </categories>
       <tags>
         <tag>C语言</tag>
       </tags>
@@ -82,6 +85,9 @@ a. 在系统中，地址按字节编址，short占2字节，double占8字节。<
 <li>列指针进行&amp;运算变为行指针，行指针进行*运算变为列指针。</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>C语言, 数据结构</category>
+      </categories>
       <tags>
         <tag>C语言</tag>
       </tags>
