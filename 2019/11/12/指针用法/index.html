@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="C语言," />
 
 
 
@@ -79,14 +79,15 @@
 
 
 
-<meta name="description" content="靓仔界的艺术家">
-<meta name="keywords" content="编程， 艺术">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kalwae&#39;s Blog">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+<meta name="description" content="指针基础用法 声明指针：int * pi; &#x2F;&#x2F;表示指向int类型变量的指针 指针用于储存变量的地址。   *和指针名之间的空格：声明时使用空格，在解引用变量时省略空格。     关于指针的符号：&amp;amp;和* &amp;amp;变量名：给出变量的储存地址 *：解引用运算符  123ptr = &amp;amp;bah;  val = *ptr;&#x2F;&#x2F;val = ptr;两种写法等价 指针与数组指针与一维数组">
+<meta name="keywords" content="C语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="指针用法">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;%E6%8C%87%E9%92%88%E7%94%A8%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="kalwae&#39;s Blog">
-<meta property="og:description" content="靓仔界的艺术家">
+<meta property="og:description" content="指针基础用法 声明指针：int * pi; &#x2F;&#x2F;表示指向int类型变量的指针 指针用于储存变量的地址。   *和指针名之间的空格：声明时使用空格，在解引用变量时省略空格。     关于指针的符号：&amp;amp;和* &amp;amp;变量名：给出变量的储存地址 *：解引用运算符  123ptr = &amp;amp;bah;  val = *ptr;&#x2F;&#x2F;val = ptr;两种写法等价 指针与数组指针与一维数组">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-12T12:10:06.192Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -117,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/11/12/指针用法/"/>
 
 
 
 
 
-  <title>kalwae's Blog</title>
+  <title>指针用法 | kalwae's Blog</title>
   
 
 
@@ -142,8 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -228,172 +228,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/12/%E7%BB%93%E6%9E%84%E4%BD%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kalwae">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kalwae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/12/%E7%BB%93%E6%9E%84%E4%BD%93/" itemprop="url">结构体</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-12T20:01:25+08:00">
-                2019-11-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="结构体声明"><a href="#结构体声明" class="headerlink" title="结构体声明"></a>结构体声明</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">book</span>&#123;</span></span><br><span class="line">	<span class="keyword">char</span> title[<span class="number">41</span>];</span><br><span class="line">	<span class="keyword">char</span> author[<span class="number">31</span>];</span><br><span class="line">	<span class="keyword">float</span> value;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>该声明并未创建实际的数据对象，只是描述了该对象由什么组成。  </li>
-<li>该声明后的”;”是必须有的，表示结构布局定义结束。  </li>
-<li>该声明放在函数内外均可，若放在一个函数内，它的标识只能在函数内部使用，放在函数外部，则声明后的所有函数都能使用。  </li>
-</ul>
-<hr>
-<blockquote>
-<p>struct book library; </p>
-<ul>
-<li>将library声明为一个使用book结构布局的结构变量。  <h2 id="定义结构变量"><a href="#定义结构变量" class="headerlink" title="定义结构变量"></a>定义结构变量</h2>struct book a, b, * c;    </li>
-<li>从本质上看，创建了一个名为<code>struct book</code>的新类型。  </li>
-<li>该新类型的内存形式相当于将结构体内所有成员的内存合并在一起。  </li>
-</ul>
-<h2 id="初始化结构体"><a href="#初始化结构体" class="headerlink" title="初始化结构体"></a>初始化结构体</h2></blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">book</span> <span class="title">library</span> = &#123;</span></span><br><span class="line">	<span class="string">"Thinking in C"</span>,</span><br><span class="line">	<span class="string">"张浩"</span>,</span><br><span class="line">	<span class="string">"19"</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>C99和C11为结构体提供了指定初始化器  </p>
-<ul>
-<li>只是初始化book结构的value成员<br>  <code>struct book surprise = {.value = 19.98};</code></li>
-<li>可以按照任意顺序指定初始化器    <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   <span class="class"><span class="keyword">struct</span> <span class="title">book</span> <span class="title">gift</span> = &#123;</span></span><br><span class="line">.value = <span class="number">25.99</span>,</span><br><span class="line">.author = <span class="string">"James Broadfool"</span>,</span><br><span class="line">.title = <span class="string">"Rue for the Toad"</span></span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="访问结构成员"><a href="#访问结构成员" class="headerlink" title="访问结构成员"></a>访问结构成员</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">library.title;</span><br><span class="line">library.author;</span><br><span class="line">library.value;</span><br></pre></td></tr></table></figure></li>
-<li>本质上，<code>.title</code>,<code>.author</code>,<code>.value</code>的作用相当于book结构的下标。  </li>
-<li>需要访问<code>library.value</code>的地址时用<code>&amp;library.value</code><br>  (“.”的优先级比”&amp;”高)  <h2 id="结构体的嵌套结构"><a href="#结构体的嵌套结构" class="headerlink" title="结构体的嵌套结构"></a>结构体的嵌套结构</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEN 20</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> * msgs[<span class="number">5</span>] = </span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"   Thank you for the wonderful evening,"</span>,</span><br><span class="line">	<span class="string">"You certainly prove that a "</span>,</span><br><span class="line">	<span class="string">"is a special kind of guy .We must get together"</span>,</span><br><span class="line">	<span class="string">"over a delicious "</span>,</span><br><span class="line">	<span class="string">" and have a few laughs"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">names</span> &#123;</span></span><br><span class="line">	<span class="keyword">char</span> first[LEN];</span><br><span class="line">	<span class="keyword">char</span> last[LEN]; </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">guy</span> &#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">names</span> <span class="title">handle</span>;</span></span><br><span class="line">	<span class="keyword">char</span> favfood[LEN];</span><br><span class="line">	<span class="keyword">char</span> job[LEN];</span><br><span class="line">	<span class="keyword">float</span> income;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">guy</span> <span class="title">fellow</span> = &#123;</span></span><br><span class="line">		&#123;<span class="string">"Ewen"</span>, <span class="string">"Villard"</span>&#125;,</span><br><span class="line">		<span class="string">"grilled salmon"</span>,</span><br><span class="line">		<span class="string">"personality coach"</span>,</span><br><span class="line">		<span class="number">68112.00</span></span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Dear %s,  \n\n"</span>, fellow.handle.first);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s%s.\n"</span>, msgs[<span class="number">0</span>], fellow.handle.first);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s%s\n"</span>, msgs[<span class="number">1</span>], fellow.job);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, msgs[<span class="number">2</span>]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s%s%s"</span>, msgs[<span class="number">3</span>], fellow.favfood, msgs[<span class="number">4</span>]);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(fellow.income &gt; <span class="number">150000.0</span>)&#123;</span><br><span class="line">		<span class="built_in">puts</span>(<span class="string">"!!"</span>);</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(fellow.income &gt; <span class="number">75000.0</span>)&#123;</span><br><span class="line">		<span class="built_in">puts</span>(<span class="string">"!"</span>);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">puts</span>(<span class="string">"."</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n%40s%s\n"</span>, <span class="string">" "</span>, <span class="string">"See you soon,"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%40s%s\n"</span>, <span class="string">" "</span>, <span class="string">"Shalala"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">运行结果：</span><br><span class="line">Dear Ewen,</span><br><span class="line"></span><br><span class="line">   Thank you <span class="keyword">for</span> the wonderful evening,Ewen.</span><br><span class="line">You certainly prove that a personality coach</span><br><span class="line">is a special kind of guy .We must <span class="built_in">get</span> together</span><br><span class="line">over a delicious grilled salmon <span class="keyword">and</span> have a few laughs.</span><br><span class="line"></span><br><span class="line">                                        See you soon,</span><br><span class="line">                                        Shalala</span><br></pre></td></tr></table></figure>
-<h2 id="声明结构数组"><a href="#声明结构数组" class="headerlink" title="声明结构数组"></a>声明结构数组</h2><code>struct book library[n];</code>  </li>
-<li>注意：  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">library             <span class="comment">//一个book结构的数组</span></span><br><span class="line">library[<span class="number">2</span>]          <span class="comment">//一个数组元素，该元素是book结构  </span></span><br><span class="line">library[<span class="number">2</span>].title    <span class="comment">//一个char数组（library[2]的title成员）</span></span><br><span class="line">library[<span class="number">2</span>].title[<span class="number">4</span>] <span class="comment">//数组中library[2]元素的title成员的一个字符</span></span><br></pre></td></tr></table></figure>
-<h2 id="指向结构体的指针"><a href="#指向结构体的指针" class="headerlink" title="指向结构体的指针"></a>指向结构体的指针</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEN 20</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">names</span> &#123;</span></span><br><span class="line">	<span class="keyword">char</span> first[LEN];</span><br><span class="line">	<span class="keyword">char</span> last[LEN]; </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">guy</span> &#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">names</span> <span class="title">handle</span>;</span></span><br><span class="line">	<span class="keyword">char</span> favfood[LEN];</span><br><span class="line">	<span class="keyword">char</span> job[LEN];</span><br><span class="line">	<span class="keyword">float</span> income;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">guy</span> <span class="title">fellow</span>[2] = &#123;</span></span><br><span class="line">		&#123;</span><br><span class="line">			&#123;<span class="string">"Ewen"</span>, <span class="string">"Villard"</span>&#125;,</span><br><span class="line">			<span class="string">"grilled salmon"</span>,</span><br><span class="line">			<span class="string">"personality coach"</span>,</span><br><span class="line">			<span class="number">68112.00</span></span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			&#123;<span class="string">"Rodney"</span>, <span class="string">"Swillbelly"</span>&#125;,</span><br><span class="line">			<span class="string">"tripe"</span>,</span><br><span class="line">			<span class="string">"tabloid editor"</span>,</span><br><span class="line">			<span class="number">432400.00</span></span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">guy</span> * <span class="title">him</span>;</span></span><br><span class="line">		</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"address #1: %p #2: %p\n"</span>, &amp;fellow[<span class="number">0</span>], &amp;fellow[<span class="number">1</span>]);</span><br><span class="line">	him = &amp;fellow[<span class="number">0</span>];</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"pointer #1: %p #2: %p\n"</span>, him, him + <span class="number">1</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"him-&gt;income is $%.2f: (*him).income is $%.2f\n"</span>, him-&gt;income, (*him).income);</span><br><span class="line">	him++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"him-&gt;favfood is $%.2f: him-&gt;handle.last is $%.2f\n"</span>, him-&gt;favfood, him-&gt;handle.last);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">运行结果：</span><br><span class="line">address #<span class="number">1</span>: <span class="number">000000000062F</span>D60 #<span class="number">2</span>: <span class="number">000000000062F</span>DB4</span><br><span class="line">pointer #<span class="number">1</span>: <span class="number">000000000062F</span>D60 #<span class="number">2</span>: <span class="number">000000000062F</span>DB4</span><br><span class="line">him-&gt;income is $<span class="number">68112.00</span>: (*him).income is $<span class="number">68112.00</span></span><br><span class="line">him-&gt;favfood is $<span class="number">0.00</span>: him-&gt;handle.last is $<span class="number">0.00</span></span><br></pre></td></tr></table></figure>
-<h4 id="声明和初始化结构指针"><a href="#声明和初始化结构指针" class="headerlink" title="声明和初始化结构指针"></a>声明和初始化结构指针</h4><code>struct guy * him;</code>  </li>
-<li>指针现在可以指向任何guy类型的结构，和数组不同，结构变量名并不是结构的地址，因此要在结构变量名前面加上“&amp;”运算符，如果barnery是一个guy类型的结构变量，可以这样写：<br>  <code>him = &amp;barnery;</code>  </li>
-<li>在本例中，fellow是一个结构数组，这意味着fellow[0]是一个结构，所以要让him指向fellow[0]，可以这样写：<br>  <code>him = &amp;fellow[0];</code>  <h4 id="用指针访问成员"><a href="#用指针访问成员" class="headerlink" title="用指针访问成员"></a>用指针访问成员</h4><blockquote>
-<p>“.”的左操作数是一个结果为结构的表达式<br>“-&gt;”的左操作数是指向结构体的指针  </p>
-<ul>
-<li>思考：指针him指向结构变量fellow[0]，如何通过him获得fellow[0]的成员的值呢？  </li>
-</ul>
-<ol>
-<li>使用-&gt;运算符  <ul>
-<li>如果<code>him == &amp;barney</code>，那么<code>him-&gt;income</code>即是<code>barney.income</code>  </li>
-<li>如果<code>him == &amp;fellow[0]</code>，那么<code>him-&gt;income</code>即是<code>fellow[0].income</code>  </li>
-</ul>
-</li>
-<li>“<em>”和“&amp;”是互逆运算符<br> `fellow[0].income == (</em>him).income`</li>
-</ol>
-</blockquote>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -423,9 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/12/%E6%8C%87%E9%92%88%E7%94%A8%E6%B3%95/" itemprop="url">指针用法</a></h1>
+          <h1 class="post-title" itemprop="name headline">指针用法</h1>
         
 
         <div class="post-meta">
@@ -475,9 +310,7 @@
       
 
       
-        
-          
-            <h1 id="指针基础用法"><a href="#指针基础用法" class="headerlink" title="指针基础用法"></a>指针基础用法</h1><ol>
+        <h1 id="指针基础用法"><a href="#指针基础用法" class="headerlink" title="指针基础用法"></a>指针基础用法</h1><ol>
 <li>声明指针：<code>int * pi; //表示指向int类型变量的指针</code><ol>
 <li>指针用于储存变量的地址。  </li>
 <li>*和指针名之间的空格：声明时使用空格，在解引用变量时省略空格。  </li>
@@ -504,8 +337,6 @@ a. 在系统中，地址按字节编址，short占2字节，double占8字节。<
 <li>列指针进行&amp;运算变为行指针，行指针进行*运算变为列指针。</li>
 </ul>
 
-          
-        
       
     </div>
     
@@ -520,134 +351,40 @@ a. 在系统中，地址按字节编址，short占2字节，double占8字节。<
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/11/Blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kalwae">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kalwae's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/11/Blog/" itemprop="url">Blog</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-11T21:19:01+08:00">
-                2019-11-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag"># C语言</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="day01"><a href="#day01" class="headerlink" title="day01"></a>day01</h1><p>hello blog</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/11/Blog/" rel="next" title="Blog">
+                <i class="fa fa-chevron-left"></i> Blog
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/12/%E7%BB%93%E6%9E%84%E4%BD%93/" rel="prev" title="结构体">
+                结构体 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -657,10 +394,11 @@ a. 在系统中，地址按字节编址，short占2字节，double占8字节。<
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -668,6 +406,10 @@ a. 在系统中，地址按字节编址，short占2字节，double占8字节。<
 
 
           
+
+  
+
+
 
         </div>
         
@@ -688,8 +430,17 @@ a. 在系统中，地址按字节编址，short占2字节，double占8字节。<
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -744,6 +495,22 @@ a. 在系统中，地址按字节编址，short占2字节，double占8字节。<
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#指针基础用法"><span class="nav-number">1.</span> <span class="nav-text">指针基础用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针与数组"><span class="nav-number">2.</span> <span class="nav-text">指针与数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#指针与一维数组"><span class="nav-number">2.1.</span> <span class="nav-text">指针与一维数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针和多维数组"><span class="nav-number">2.2.</span> <span class="nav-text">指针和多维数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指向多维数组的指针（列指针）"><span class="nav-number">2.3.</span> <span class="nav-text">指向多维数组的指针（列指针）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -888,6 +655,10 @@ a. 在系统中，地址按字节编址，short占2字节，double占8字节。<
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
