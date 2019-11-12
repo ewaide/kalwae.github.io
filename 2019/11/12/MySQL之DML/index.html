@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="DML," />
 
 
 
@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="靓仔界的艺术家">
-<meta name="keywords" content="编程， 艺术">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;index.html">
+<meta name="description" content="MySQL之DML添加数据insert into tableName(columnName1,...,columnNamen) values(value1,...valuen);      注意：   如果表名后不定义列名，则默认给所有列添加        值。   除了数字类型，其他数据类型加引号（单双都行）。  删除数据delete from tableName [where 条件];">
+<meta name="keywords" content="DML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL之DML">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;MySQL%E4%B9%8BDML&#x2F;index.html">
 <meta property="og:site_name" content="kalwae&#39;s Blog">
-<meta property="og:description" content="靓仔界的艺术家">
+<meta property="og:description" content="MySQL之DML添加数据insert into tableName(columnName1,...,columnNamen) values(value1,...valuen);      注意：   如果表名后不定义列名，则默认给所有列添加        值。   除了数字类型，其他数据类型加引号（单双都行）。  删除数据delete from tableName [where 条件];">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-12T10:34:23.987Z">
+<meta property="og:updated_time" content="2019-11-12T12:31:23.032Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/11/12/MySQL之DML/"/>
 
 
 
 
 
-  <title>标签 | kalwae's Blog</title>
+  <title>MySQL之DML | kalwae's Blog</title>
   
 
 
@@ -231,40 +231,186 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/12/MySQL%E4%B9%8BDML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kalwae">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kalwae's Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">标签</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 4 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 30px; color: #111">C语言</a> <a href="/tags/DDL/" style="font-size: 12px; color: #ccc">DDL</a> <a href="/tags/DML/" style="font-size: 12px; color: #ccc">DML</a> <a href="/tags/DQL/" style="font-size: 12px; color: #ccc">DQL</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">MySQL之DML</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-12T20:27:53+08:00">
+                2019-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="MySQL之DML"><a href="#MySQL之DML" class="headerlink" title="MySQL之DML"></a>MySQL之DML</h1><h2 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h2><p><code>insert into tableName(columnName1,...,columnNamen) values(value1,...valuen);</code>    </p>
+<ul>
+<li>注意：  <ol>
+<li>如果表名后不定义列名，则默认给所有列添加        值。  </li>
+<li>除了数字类型，其他数据类型加引号（单双都行）。  <h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><code>delete from tableName [where 条件];</code>    </li>
+</ol>
+</li>
+<li>注意：  <ol>
+<li>[…]中的内容可以省略，如果不加条件，则删除表中所有的记录。  </li>
+<li>可以使用<code>truncate table tableName;</code><br> (重建一张具有相同列名的空表)。<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><code>update tableName set columnName1 = value1,...,columnNamen = valuen [where 条件];</code>  </li>
+</ol>
+</li>
+<li>注意：  <ol>
+<li>如果不加条件，则表中所有记录全部修改。</li>
+</ol>
+</li>
+</ul>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/DML/" rel="tag"># DML</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/12/MySQL%E4%B9%8BDDL/" rel="next" title="MySQL之DDL">
+                <i class="fa fa-chevron-left"></i> MySQL之DDL
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/12/MySQL%E4%B9%8BDQL/" rel="prev" title="MySQL之DQL">
+                MySQL之DQL <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -297,8 +443,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -362,6 +517,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL之DML"><span class="nav-number">1.</span> <span class="nav-text">MySQL之DML</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加数据"><span class="nav-number">1.1.</span> <span class="nav-text">添加数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除数据"><span class="nav-number">1.2.</span> <span class="nav-text">删除数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改数据"><span class="nav-number">1.3.</span> <span class="nav-text">修改数据</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

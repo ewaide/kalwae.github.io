@@ -1,6 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>MySQL之DQL</title>
+    <url>/2019/11/12/MySQL%E4%B9%8BDQL/</url>
+    <content><![CDATA[<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select </span><br><span class="line">    字段列表  </span><br><span class="line">from</span><br><span class="line">    表名列表</span><br><span class="line">where</span><br><span class="line">    条件列表</span><br><span class="line">group by</span><br><span class="line">    分组列表</span><br><span class="line">having</span><br><span class="line">    分组之后的条件</span><br><span class="line">order by</span><br><span class="line">    排序</span><br><span class="line">limit</span><br><span class="line">    分页限定</span><br></pre></td></tr></table></figure>
+<h1 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h1><ol>
+<li>查询多个字段<br><code>select 字段名1,... from 表名;</code>  <ul>
+<li>查询所有字段<br><code>select * from 表名;</code>  </li>
+</ul>
+</li>
+<li>去除重复的结果<br><code>select distinct 字段名 from 表名;</code>  </li>
+</ol>
+<ul>
+<li>有多个字段名时，只有各行数据完全相同才去重  </li>
+</ul>
+<ol start="3">
+<li>列求和<br><code>select 列名1+列名2 from 表名;</code>  </li>
+</ol>
+<ul>
+<li>如果有null参与的运算，结果全为null  </li>
+<li><code>ifnull()函数</code><br>  <code>select ifnull(含null的列,替换成的值) from 表名;</code>  <h1 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h1>where 条件  </li>
+</ul>
+<ol>
+<li>关系运算符：&gt;, &lt;, &gt;=, &lt;=, =, （两个不等于）!=, &lt;&gt;  </li>
+<li>与：&amp;&amp;, and, between…and…  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">age &gt;= 20 &amp;&amp; age &lt;= 30</span><br><span class="line">age &gt;= 20 and age &lt;= 30</span><br><span class="line">age between 20 and 30</span><br></pre></td></tr></table></figure></li>
+<li>或  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">age = 20 or age = 30 or age = 15</span><br><span class="line">age in(20, 30, 15)</span><br></pre></td></tr></table></figure></li>
+<li>null值不能使用=（!=）判断  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">字段 is null</span><br><span class="line">字段 is not null</span><br></pre></td></tr></table></figure>
+<h1 id="模糊查询-like"><a href="#模糊查询-like" class="headerlink" title="模糊查询(like)"></a>模糊查询(like)</h1></li>
+</ol>
+<ul>
+<li>占位符<br>‘_’表示单个字符<br>‘%’表示多个字符  </li>
+<li>where 字段 like ‘…’<h1 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h1></li>
+</ul>
+<ul>
+<li><code>order by 排序字段1 排序方式1， 排序字段2 排序方式2，......</code><br><code>select * from stu order by math asc/desc;</code>  </li>
+</ul>
+<blockquote>
+<p>asc : 升序</p>
+<p>desc : 降序  </p>
+<p>如果不加这两个限定符，则默认用升序  </p>
+</blockquote>
+<ul>
+<li><p>要对多个字段都排序，当前面的条件满足时，才会去判断第二条件<br><code>select * from stu order by math asc,english desc;</code>  </p>
+<h1 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h1><blockquote>
+<p>将一列数据作为一个整体，进行纵向的计算  </p>
+</blockquote>
+</li>
+<li><p>聚合函数会排除null值  </p>
+<ul>
+<li>解1：ifnull函数<br>  <code>select count(ifnull(english,0)) from stu;</code></li>
+<li>解2：选择不含null的列计算<br>  <code>count(*)</code>  <blockquote>
+<p>count():计算个数<br>max():最大值<br>min():最小值<br>sum():求和<br>avg():平均数 </p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h1><ol>
+<li>分组查询的字段：分组字段，聚合函数<br><code>select sex,avg(math),count(id) from stu group by sex;</code>  </li>
+<li>where和having的区别<br> 1.where在分组前进行限定，如果不满足条件，则不参与分组；having在分组后进行限定，如果不满足条件，则不会被查询出来  <ol start="2">
+<li>where后不可以跟聚合函数，having后可以进行聚合函数的判断 <h1 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h1><code>limit 开始的所有，每页查询的条数;</code><br>公式：开始的所引 = （当前页码 - 1） * 每页显示的条数  </li>
+</ol>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>DQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL之DML</title>
+    <url>/2019/11/12/MySQL%E4%B9%8BDML/</url>
+    <content><![CDATA[<h1 id="MySQL之DML"><a href="#MySQL之DML" class="headerlink" title="MySQL之DML"></a>MySQL之DML</h1><h2 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h2><p><code>insert into tableName(columnName1,...,columnNamen) values(value1,...valuen);</code>    </p>
+<ul>
+<li>注意：  <ol>
+<li>如果表名后不定义列名，则默认给所有列添加        值。  </li>
+<li>除了数字类型，其他数据类型加引号（单双都行）。  <h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><code>delete from tableName [where 条件];</code>    </li>
+</ol>
+</li>
+<li>注意：  <ol>
+<li>[…]中的内容可以省略，如果不加条件，则删除表中所有的记录。  </li>
+<li>可以使用<code>truncate table tableName;</code><br> (重建一张具有相同列名的空表)。<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><code>update tableName set columnName1 = value1,...,columnNamen = valuen [where 条件];</code>  </li>
+</ol>
+</li>
+<li>注意：  <ol>
+<li>如果不加条件，则表中所有记录全部修改。</li>
+</ol>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>DML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL之DDL</title>
+    <url>/2019/11/12/MySQL%E4%B9%8BDDL/</url>
+    <content><![CDATA[<h1 id="MySQL之DDL"><a href="#MySQL之DDL" class="headerlink" title="MySQL之DDL"></a>MySQL之DDL</h1><h2 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h2><ol>
+<li>create：创建<ul>
+<li>创建新数据库db<br>  <code>create database db;</code></li>
+<li>判断数据库不存在，再创建<br>  <code>create database if not exists db;</code></li>
+<li>创建数据库并指定字符集<br>  <code>create database db character set gbk;</code>  </li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>注意：字符集写成==utf8==,不能是utf-8</li>
+</ul>
+<ol start="2">
+<li>retrieve:查询<ul>
+<li>查询所有数据库的名称<br>  <code>show databases;</code></li>
+<li>查询某个数据库的字符集<br>  <code>show create database db;</code></li>
+</ul>
+</li>
+<li>update:修改<ul>
+<li>修改数据库的字符集<br>  <code>alter database db character set utf8;</code></li>
+</ul>
+</li>
+<li>delete:删除<ul>
+<li>删除数据库<br>  <code>drop database db;</code></li>
+<li>先判断数据库存在再删除<br>  <code>drop database if exists db;</code>  </li>
+</ul>
+</li>
+<li>使用数据库  <ul>
+<li>查询正在使用的数据库名称<br>  <code>select database();</code>  </li>
+<li>使用数据库<br>  <code>use db;</code><h2 id="操作表"><a href="#操作表" class="headerlink" title="操作表"></a>操作表</h2></li>
+</ul>
+</li>
+<li>创建表<br> <code>create table tableName(</code><br> <code>列名1 数据类型1,</code><br> <code>列名2 数据类型2,</code><br> <code>...</code><br> <code>列名n 数据类型n</code><br> <code>);</code>  </li>
+<li>查询表  <ul>
+<li>查询某个数据库中所有的表名称<br>  <code>show tables;</code>  </li>
+<li>查询表结构<br>  <code>desc tableName;</code>  </li>
+<li>查询表中使用的字符集<br>  <code>show create table tableName;</code>  </li>
+</ul>
+</li>
+<li>删除表  <ul>
+<li>删除数据表<br>  <code>drop table tableName;</code>  </li>
+<li>判断存在后再删除<br>  <code>drop table if exists tableName;</code>  </li>
+</ul>
+</li>
+<li>修改表  <ul>
+<li>修改表名<br>  <code>alter table tableName rename to newTableName;</code>  </li>
+<li>修改表的字符集<br>  <code>alter table tableName character set gbk;</code>  </li>
+<li>添加一列<br>  <code>alter table tableName add columnName dataType;</code>  </li>
+<li>修改列名称、数据类型  <ol>
+<li>列名和数据类型都修改：<code>alter table tableName change columnName newColumnName dataType;</code>  </li>
+<li>只修改数据类型：<code>alter table tableName modify columnName dataType;</code>  </li>
+</ol>
+</li>
+<li>删除列<br>  <code>alter table tableName drop columnName;</code>  </li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>DDL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>结构体</title>
     <url>/2019/11/12/%E7%BB%93%E6%9E%84%E4%BD%93/</url>
     <content><![CDATA[<h2 id="结构体声明"><a href="#结构体声明" class="headerlink" title="结构体声明"></a>结构体声明</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">book</span>&#123;</span></span><br><span class="line">	<span class="keyword">char</span> title[<span class="number">41</span>];</span><br><span class="line">	<span class="keyword">char</span> author[<span class="number">31</span>];</span><br><span class="line">	<span class="keyword">float</span> value;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
